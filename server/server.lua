@@ -21,7 +21,7 @@ RegisterNetEvent('rv_paychecks:server:CollectPaycheck', function()
         return
     end
     Player.Functions.AddMoney('cash', current)
-    TriggerClientEvent('QBCore:Notify', src, string.gsub(Config.Messages.paycheckAvailable, "amount", current), 'success')
+    TriggerClientEvent('QBCore:Notify', src, string.gsub(Config.Messages.collected, "amount", current), 'success')
     MySQL.Async.execute('UPDATE players SET paychecks = ? WHERE citizenid = ?', {
         0, Player.PlayerData.citizenid
     })
