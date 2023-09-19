@@ -2,7 +2,7 @@
 
 The following must be executed on your MySQL database:
 
-ALTER TABLE `players` ADD paychecks INT DEFAULT '0'
+`ALTER TABLE players ADD paychecks INT DEFAULT 0`
 
 Open `qb-core/server/functions.lua` and CTRL + F for `function PaycheckInterval()`
 
