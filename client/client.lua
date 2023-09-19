@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName("STRING")
         AddTextComponentSubstringPlayerName(v.name)
-        EndTextCommandSetBlipName(LifeInvader)
+        EndTextCommandSetBlipName(blip)
         RequestModel(GetHashKey(v.ped.model))
         while not HasModelLoaded(GetHashKey(v.ped.model)) do
             Wait(1)
