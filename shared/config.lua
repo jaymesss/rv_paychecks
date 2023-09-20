@@ -1,6 +1,7 @@
 Config = {}
 Config.CoreName = "qb-core"
 Config.PayCheckInterval = 15 -- In Minutes
+Config.RequireOnDuty = true
 Config.Locations = {
     {
         name = "Life Invader",

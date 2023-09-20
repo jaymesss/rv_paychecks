@@ -30,6 +30,9 @@ end)
 RegisterNetEvent('rv_paychecks:server:GetPaycheck', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+    if Config.RequireOnDuty and not Player.PlayerData.job.onduty then
+        return
+    end
     local response = MySQL.query.await('SELECT * FROM players WHERE citizenid = @citizenid', {
         ["@citizenid"] = Player.PlayerData.citizenid
     })
