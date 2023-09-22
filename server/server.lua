@@ -30,6 +30,9 @@ end)
 RegisterNetEvent('rv_paychecks:server:GetPaycheck', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+    if Player == nil then
+        return
+    end
     if Config.RequireOnDuty and not Player.PlayerData.job.onduty then
         return
     end
